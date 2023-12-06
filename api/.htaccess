@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . index.php [L]
+
+
+RewriteEngine On
+RewriteRule (^|/)Classes(/|$) - [F]
+
+
+<Files Class.php>
+ order allow,deny
+ allow from all
+</Files>
+
+<Files inc.php>
+ order allow,deny
+ allow from all
+</Files>

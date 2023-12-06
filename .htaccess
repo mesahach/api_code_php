@@ -1,0 +1,13 @@
+RewriteEngine on
+<Files ~ "Class.php">
+Order Deny,Allow
+Deny from All
+</Files>
+
+<FilesMatch ".(htaccess|Classes|htpasswd|ini|phps|fla|psd|log|sh)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule (^|/)Classes(/|$) - [F]
